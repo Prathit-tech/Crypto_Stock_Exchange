@@ -44,40 +44,21 @@ getAdaData();
 getSolData();
 getMaticData();
 
-async function connect() {
-    if (window.ethereum) {
-       await window.ethereum.request({ method: "eth_requestAccounts" });
-       window.web3 = new Web3(window.ethereum);
-       const account = web3.eth.accounts;
-       //Get the current MetaMask selected/active wallet
-       const walletAddress = account.givenProvider.selectedAddress;
-       console.log(`Wallet: ${walletAddress}`);
-    
-    } else {
-     console.log("No wallet");
-    }
-  }
-
-window.addEventListener('load',async() =>
+async  function  connect() 
 {
-    if (window.ethereum) {
-        window.web3 = new Web3(ethereum);
-        try {
-            await ethereum.enable();
-        } catch (error) {
-            console.log('user rejected permission');
-        }
-    }
-    else if (window.web3) 
-    {
-        window.web3 = new Web3(web3.currentProvider);
-    }
-    else 
-    {
-        console.log('No web3 provider detected');
-    }
-});
-
+        if (typeof  window.ethereum !== "undefined")
+        {
+            try 
+            {
+                console.log("connecting");
+                await  ethereum.request({ method:  "eth_requestAccounts" });
+            } catch (error) 
+            {
+                console.log(error);
+            }
+            document.getElementById("b1").innerHTML = "Connected";
+        } 
+}
 console.log (window.web3.currentProvider);
 
 var contractAddress = '0xB302F922B24420f3A3048ddDC4E2761CE37Ea098';

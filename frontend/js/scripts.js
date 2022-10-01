@@ -5,5 +5,3 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
-window.ethereum.enable();
-const Web3 =  new Web3(new Web3.providers.HttpProvider("http://localhost:5500"));

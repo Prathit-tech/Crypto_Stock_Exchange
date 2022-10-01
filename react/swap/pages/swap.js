@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Web3 from 'web3';
 import vmContract from '../contracts/contract';
 export default function swap()
@@ -11,7 +11,7 @@ export default function swap()
             try
             {
                 await window.ethereum.request({method : "eth_requestAccounts"})
-                web3 = new Web3(window.ethereum);
+                web3 = new Web3(window.web3.currentProvider.enable());
             }
             catch(err)
             {
@@ -33,13 +33,32 @@ export default function swap()
 
     const buy = async () =>
     {
-        vmContract.buy({from: web3.eth.accounts[0], gas: 3000000, value: 100}, function(err, res){});
+        web3 = new Web3(window.ethereum);
+        await vmContract.methods.buy(1).call();
     }
+
+
+    const sell = async () =>
+    {
+        await vmContract.methods.sell(1).call();
+    }
+    
     return(
         <div>
-            <h1>Hello world</h1>
-            <button onClick={connectWalletHandler}>Metamax</button>
-            <button onClick={buy}>Buy</button>
+            <div className='m-auto p-2 ' style={{width:400+'px',height:100+'px'}}>
+                <h1 className='m-auto'>Trading</h1>
+            </div>
+            <div class="container m-auto">
+                <div className='row m-auto p-2 ' style={{width:400+'px',height:100+'px'}}>
+                    <button className="btn btn-primary m-auto" onClick={connectWalletHandler}>Connect to Wallet</button>
+                </div>
+                <div className='row m-auto p-2' style={{width:400+'px',height:100+'px'}}>
+                    <button className="btn btn-success m-auto" onClick={buy}>Buy</button>
+                </div>
+                <div className='row m-auto p-2' style={{width:400+'px',height:100+'px'}}>
+                    <button className="btn btn-danger m-auto" onClick={sell}>Sell</button>
+                </div>
+            </div>
         </div>
         
     )

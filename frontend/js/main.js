@@ -62,6 +62,3 @@ async  function  connect()
         } 
 }
 
-
-var contractAddress = '0xB302F922B24420f3A3048ddDC4E2761CE37Ea098';
-var abi = JSON.parse('[{"inputs": [{"internalType": "address","name": "_token","type": "address"}],"stateMutability": "payable","type": "constructor"},{"inputs": [],"name": "buy","outputs": [],"stateMutability": "payable","type": "function"},{"inputs": [{"internalType": "uint256","name": "amount","type": "uint256"}],"name": "sell","outputs": [],"stateMutability": "nonpayable","type": "function"},{"inputs": [],"name": "tokenAddress","outputs": [{"internalType": "address","name": "","type": "address"}],"stateMutability": "view","type": "function"}]');

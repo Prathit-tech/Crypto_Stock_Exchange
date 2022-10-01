@@ -1,5 +1,24 @@
 {
   "dependencies": {
+    "clientside-require": "^4.7.2",
+    "express": "^4.18.1",
     "web3": "^1.8.0"
-  }
+  },
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prathit-tech/Crypto_Stock_Exchange.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prathit-tech/Crypto_Stock_Exchange/issues"
+  },
+  "homepage": "https://github.com/Prathit-tech/Crypto_Stock_Exchange#readme",
+  "description": ""
 }

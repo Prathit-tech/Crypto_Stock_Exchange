@@ -44,7 +44,7 @@ export default function swap()
     }
     
     return(
-        <div>
+        <div className='bg-info bg-gradient'>
             <div className='m-auto p-2 ' style={{width:400+'px',height:100+'px'}}>
                 <h1 className='m-auto'>Trading</h1>
             </div>

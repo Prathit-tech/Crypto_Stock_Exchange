@@ -7,6 +7,17 @@ const abi = [
 	{
 		"inputs": [
 			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "uint256",
 				"name": "_amount_to_be_sent",
 				"type": "uint256"
@@ -31,17 +42,6 @@ const abi = [
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_token",
-				"type": "address"
-			}
-		],
-		"stateMutability": "payable",
-		"type": "constructor"
-	},
-	{
 		"inputs": [],
 		"name": "set_Price",
 		"outputs": [
@@ -51,7 +51,7 @@ const abi = [
 				"type": "uint256"
 			}
 		],
-		"stateMutability": "view",
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -69,6 +69,6 @@ const abi = [
 	}
 ]
 
-const vmContract = new web3.eth.Contract(abi,'0xAD0f708a3bb45719058EdEa255a745B112052897');
+const vmContract = new web3.eth.Contract(abi,'0x86E5AF303d6A48e1518C5d2589327db2B8cb8b0f');
 
 export default vmContract
